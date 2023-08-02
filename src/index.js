@@ -4,9 +4,23 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import SignUp from './pages/SignUp';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path='/' element={<Home />}></Route>
+        <Route path='/SignUp' element={<SignUp />}></Route>
+      </Routes>
+      <Footer />
+    </BrowserRouter>
     <App />
   </React.StrictMode>
 );
