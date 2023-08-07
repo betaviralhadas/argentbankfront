@@ -17,7 +17,7 @@ const Form = () => {
                 <input type="checkbox" id="remember-me" />
                 <label for="remember-me">Remember me</label>
             </div>
-            <NavLink className="sign-in-button" to="/">Sign In</NavLink>
+            <NavLink className="sign-in-button" to="/User">Sign In</NavLink>
         </form>
     )
 }
