@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import { Provider } from "react-redux";
+import {store} from "./components/MyStore";
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -14,6 +16,7 @@ import User from './pages/User';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+     <Provider store={store}>
     <BrowserRouter>
       <Header />
       <Routes>
@@ -23,6 +26,7 @@ root.render(
       </Routes>
       <Footer />
     </BrowserRouter>
+    </Provider>
   </React.StrictMode>
 );
 
