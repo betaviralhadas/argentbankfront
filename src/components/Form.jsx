@@ -12,10 +12,12 @@ const Form = () => {
     const [email, setMail] = useState("");
     const [password, setPassword] = useState("");
     const submit = (e) => {
+        e.preventDefault();
         const data ={
             email: e.target[0].value,
             password: e.target[1].value,
         };
+        
         Axios.post("http://localhost:3001/api/v1/user/login",data)
          .then((res)=>{
             dispatch(setLoginInfo(data));

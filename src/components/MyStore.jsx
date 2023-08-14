@@ -10,7 +10,7 @@ const initialStateValue = {
 // criacao do meu slice
 const theStore = createSlice({
     name: "user",
-    initialStateValue,
+    initialState: initialStateValue,
     reducers: {
       setLoginInfo: (state, action) => {
         state.loginInfo = action.payload;
@@ -27,6 +27,13 @@ const theStore = createSlice({
       setFirstName: (state, action) => {
         state.firstName = action.payload;
       },
+      setLogout: (state) => {
+        state.token=null;
+        state.loginInfo=null;
+        state.lastName=null;
+        state.userName=null;
+        state.firstName=null;
+      },
     },
   });
 
@@ -42,5 +49,6 @@ export const store = configureStore({
     setLastName,
     setUserName,
     setFirstName,
+    setLogout,
 
   } = theStore.actions;

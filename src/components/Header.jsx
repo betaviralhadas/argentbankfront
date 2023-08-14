@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import "../css/main.css";
 import Logo from "../img/argentBankLogo.png";
+import UserConnect from "./UserConnected";
 
 const Header = () => {
     return (
@@ -14,12 +15,7 @@ const Header = () => {
                 />
                 <h1 className="sr-only">Argent Bank</h1>
             </NavLink>
-            <div>
-                <NavLink className="main-nav-item" to="/SignIn">
-                    <i className="fa fa-user-circle"></i>
-                    Sign In
-                </NavLink>
-            </div>
+            {<UserConnect />}
         </nav>
     )
 }
