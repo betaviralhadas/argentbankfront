@@ -17,13 +17,13 @@ const UserConnect = () => {
 
     if(token) {
         return(
-            <div>
-        <NavLink class="main-nav-item" to="/User">
-          <i class="fa fa-user-circle"></i>
-          <p>${firstName}</p>
+            <div className="user-connect">
+        <NavLink className="main-nav-item" to="/User">
+          <i className="fa fa-user-circle"></i>
+          <p>{firstName}</p>
         </NavLink>
-        <NavLink onClick={handleLogout} class="main-nav-item" to="/">
-          <i class="fa fa-sign-out"></i>
+        <NavLink onClick={handleLogout} className="main-nav-item" to="/">
+          <i className="fa fa-sign-out"></i>
           Sign Out
         </NavLink>
       </div>

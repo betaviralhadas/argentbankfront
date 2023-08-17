@@ -6,11 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from "react-redux";
 import {store} from "./components/MyStore";
 
-import Header from './components/Header';
+
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import User from './pages/User';
+import EditUserName from './pages/EditUserName';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -18,11 +20,11 @@ root.render(
   
      <Provider store={store}>
     <BrowserRouter>
-      <Header />
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path='/SignIn' element={<SignIn />}></Route>
         <Route path='/User' element={<User />}></Route>
+        <Route path='/EditUserName' element={<EditUserName />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>
