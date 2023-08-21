@@ -12,6 +12,7 @@ import Home from './pages/Home';
 import SignIn from './pages/SignIn';
 import User from './pages/User';
 import EditUserName from './pages/EditUserName';
+import Transactions from './pages/Transactions';
 
 
 
@@ -25,6 +26,7 @@ root.render(
         <Route path='/SignIn' element={<SignIn />}></Route>
         <Route path='/User' element={<User />}></Route>
         <Route path='/EditUserName' element={<EditUserName />}></Route>
+        <Route path='/Transactions' element={<Transactions />}></Route>
       </Routes>
       <Footer />
     </BrowserRouter>

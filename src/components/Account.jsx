@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "../css/main.css";
 
 const Account = () => {
@@ -11,7 +12,7 @@ const Account = () => {
         <p className="account-amount-description">Available Balance</p>
       </div>
       <div className="account-content-wrapper cta">
-        <button className="transaction-button">View transactions</button>
+        <NavLink className="transaction-button" to="/Transactions">View transactions</NavLink>
       </div>
     </section>
     <section className="account">
@@ -21,7 +22,7 @@ const Account = () => {
         <p className="account-amount-description">Available Balance</p>
       </div>
       <div className="account-content-wrapper cta">
-        <button className="transaction-button">View transactions</button>
+        <NavLink className="transaction-button" to="/Transactions">View transactions</NavLink>
       </div>
     </section>
     <section className="account">
@@ -31,7 +32,7 @@ const Account = () => {
         <p className="account-amount-description">Current Balance</p>
       </div>
       <div className="account-content-wrapper cta">
-        <button className="transaction-button">View transactions</button>
+        <NavLink className="transaction-button" to="/Transactions">View transactions</NavLink>
       </div>
     </section>
     </>
