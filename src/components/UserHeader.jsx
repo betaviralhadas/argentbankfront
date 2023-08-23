@@ -6,14 +6,10 @@ import "../css/main.css";
 const userHeader = () => {
     return (
         <>
-            <nav className="main-nav">
-                <NavLink className="main-nav-logo" to="/">
-                    <img
-                        className="main-nav-logo-image"
-                        src={Logo}
-                        alt="Argent Bank Logo"
-                    />
-                    <h1 className="sr-only">Argent Bank</h1>
+            <nav className="nav-user">
+                <NavLink className="user-logo" to="/">
+                    <i className="fa-solid fa-vault"></i>
+                    <p><strong>Argent </strong> Bank</p>
                 </NavLink>
                 <div className="edit-user-connect">
                     <NavLink className="nav-item" to="/User">
