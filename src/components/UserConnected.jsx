@@ -1,26 +1,28 @@
 import React, { useEffect } from "react";
-import "../css/main.css";
+import { NavLink } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setLogout, setUserName } from "./MyStore";
-import { NavLink } from "react-router-dom";
+import "../css/main.css";
 
 function UserConnect() {
+  // Get global state token and username
   const token = useSelector((state) => state.user.token);
   const username = useSelector((state) => state.user.userName);
   const dispatch = useDispatch();
 
+  // Effect that updates the username in the global state
   useEffect(() => {
     if (username) {
       dispatch(setUserName(username));
     }
   }, [username, dispatch]);
 
-  const handleSignOut = () => { 
+  // Handler for logging out
+  const handleSignOut = () => {
     dispatch(setLogout());
   };
 
- 
-
+  // Conditional rendering based on token presence
   if (token) {
     return (
       <div className="rownav">
@@ -45,5 +47,4 @@ function UserConnect() {
     );
   }
 }
-
 export default UserConnect;

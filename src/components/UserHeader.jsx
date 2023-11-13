@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import Logo from "../img/argentBankLogo.png";
 import "../css/main.css";
 
 const userHeader = () => {
@@ -16,9 +15,9 @@ const userHeader = () => {
                         <p className="edit-user">Ben_hg</p>
                         <i className="fa fa-user-circle green"></i>
                     </NavLink>
-                    <i class="fa-solid fa-gear green"></i>
+                    <i className="fa-solid fa-gear green"></i>
                     <NavLink className="nav-item" to="/">
-                        <i class="fa-solid fa-power-off green"></i>
+                        <i className="fa-solid fa-power-off green"></i>
                     </NavLink>
                 </div>
             </nav>

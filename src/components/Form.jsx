@@ -1,35 +1,39 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { setToken, setLoginInfo, setFirstName } from "./MyStore";
 import { useDispatch } from "react-redux";
-import "../css/main.css";
+import { setToken, setLoginInfo, setFirstName } from "./MyStore";
 import Axios from "axios";
+import "../css/main.css";
 
 function Form() {
+    // Initialization of local states
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    // Handler for submitting the form
     const handleSubmit = (e) => {
         e.preventDefault();
 
+        // Obtaining form data
         const data = {
             email: e.target[0].value,
             password: e.target[1].value,
         };
 
+        // Requisição POST para o endpoint de login
         Axios.post("http://localhost:3001/api/v1/user/login", data)
             .then((response) => {
+                // Update state using Redux actions
                 dispatch(setLoginInfo(data));
                 dispatch(setToken(response.data.body.token));
                 dispatch(setFirstName(response.data.body.firstName));
+                // Navigation to user page after successful login
                 navigate("/User");
             })
-
             .catch((error) => {
                 console.error("Cet identifiant ou ce mot de passe est inconnu, veuillez réessayer.");
-
             });
     };
 

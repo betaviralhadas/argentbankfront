@@ -1,9 +1,8 @@
 import React from "react";
 import "../css/main.css";
-import chatIcon from "../img/icon-chat.png";
-import moneyIcon from "../img/icon-money.png";
-import securityIcon from "../img/icon-security.png";
-
+import chatIcon from "../img/icon-chat.webp";
+import moneyIcon from "../img/icon-money.webp";
+import securityIcon from "../img/icon-security.webp";
 
 const Features = () => {
     return (
@@ -24,9 +23,7 @@ const Features = () => {
                     className="feature-icon"
                 />
                 <h3 className="feature-item-title">More savings means higher rates</h3>
-                <p>
-                    The more you save with us, the higher your interest rate will be!
-                </p>
+                <p>The more you save with us, the higher your interest rate will be!</p>
             </div>
             <div className="feature-item">
                 <img
@@ -35,10 +32,7 @@ const Features = () => {
                     className="feature-icon"
                 />
                 <h3 className="feature-item-title">Security you can trust</h3>
-                <p>
-                    We use top of the line encryption to make sure your data and money
-                    is always safe.
-                </p>
+                <p>We use top of the line encryption to make sure your data and money is always safe.</p>
             </div>
         </section>
     )
