@@ -13,10 +13,6 @@ const User = () => {
   const [userName, setUserNames] = useState("");
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    getUserData()
-  }, []);
-
   const getUserData = () => {
     Axios.post("http://localhost:3001/api/v1/user/profile", loginInfos, {
       headers: {
@@ -36,6 +32,10 @@ const User = () => {
       });
   };
 
+  useEffect(() => {
+    getUserData()
+  }, []);
+  
   return (
     <>
       {<Header />}

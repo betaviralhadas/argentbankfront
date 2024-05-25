@@ -20,7 +20,7 @@ const UserNameForm = () => {
             dispatch(setUserName(userNameValue));
             dataUser(userNameValue);
             setupdateName(userNameValue);
-            navigate("/User");
+        
         } else {
             console.error("remplissez le champ");
         }
@@ -40,6 +40,7 @@ const UserNameForm = () => {
         })
             .then((res) => {
                 console.log("success")
+                navigate("/User");
             })
             .catch(function (error) {
                 console.error("Token incorrect.");

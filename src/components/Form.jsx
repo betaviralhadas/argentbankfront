@@ -21,8 +21,9 @@ function Form() {
             email: e.target[0].value,
             password: e.target[1].value,
         };
+        console.log(data)
 
-        // Requisição POST para o endpoint de login
+        // POST request to the login endpoint
         Axios.post("http://localhost:3001/api/v1/user/login", data)
             .then((response) => {
                 // Update state using Redux actions
@@ -30,6 +31,7 @@ function Form() {
                 dispatch(setToken(response.data.body.token));
                 dispatch(setFirstName(response.data.body.firstName));
                 // Navigation to user page after successful login
+                console.log(response)
                 navigate("/User");
             })
             .catch((error) => {
