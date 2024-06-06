@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import Axios from "axios";
 import { setUserName } from "../components/MyStore";
 import Header from "../components/Header";
 import Account from "../components/Account";
 import Footer from "../components/Footer";
+import Form from "../components/Form";
 
 const User = () => {
   const loginInfos = useSelector((state) => state.user.loginInfo);
   const token = useSelector((state) => state.user.token);
   const [userName, setUserNames] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const getUserData = () => {
     Axios.post("http://localhost:3001/api/v1/user/profile", loginInfos, {
@@ -25,10 +27,12 @@ const User = () => {
         const updatedUserName = response.data.body.userName;
         setUserNames(updatedUserName);
         dispatch(setUserName(updatedUserName));
+
       })
       .catch(function (error) {
         console.error("Token incorrect.");
         console.log(error);
+        navigate("/SignIn");
       });
   };
 
@@ -36,6 +40,7 @@ const User = () => {
     getUserData()
   }, []);
   
+  if(token) {
   return (
     <>
       {<Header />}
@@ -50,5 +55,6 @@ const User = () => {
       {<Footer />}
     </>
   );
+  } 
 }
 export default User;
